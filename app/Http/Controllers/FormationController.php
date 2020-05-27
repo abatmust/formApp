@@ -15,7 +15,8 @@ class FormationController extends Controller
      */
     public function index()
     {
-        //
+        $formations = Formation::all();
+        return view('formations.index', ['formations' => $formations]);
     }
 
     /**
@@ -36,7 +37,8 @@ class FormationController extends Controller
      */
     public function store(StoreFormationRequest $request)
     {
-        dd($request->all());
+        $formation = Formation::create($request->only(['intitule','debut', 'fin', 'observation']));
+        return redirect()->route('formations.index');
     }
 
     /**

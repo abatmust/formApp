@@ -82,10 +82,17 @@
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Navigation</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Agents</a>
                         <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <a class="dropdown-item" href="{{route('agents.create')}}">Agents</a>
-                            <a class="dropdown-item" href="{{route('formations.create')}}">Formations</a>
+                            <a class="dropdown-item" href="{{route('agents.index')}}">liste des agents</a>
+                            <a class="dropdown-item" href="{{route('agents.create')}}">ajouter un agent</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Formation</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <a class="dropdown-item" href="{{route('formations.index')}}">liste des formations</a>
+                            <a class="dropdown-item" href="{{route('formations.create')}}">ajouter une formation</a>
                         </div>
                     </li>
                 </ul>

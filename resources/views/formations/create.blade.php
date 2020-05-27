@@ -13,7 +13,7 @@
               </div>
               <div class="form-group">
                 <label for="nom">Début</label>
-                <input type="text"
+                <input type="date"
                   class="form-control" name="debut" id="debut" aria-describedby="helpId" placeholder="Début">
                 <small id="helpId" class="form-text text-muted">* obligatoire</small>
               </div>
@@ -28,7 +28,7 @@
               </div>
               <div class="form-group">
                 <label for="fin">Fin</label>
-                <input type="text"
+                <input type="date"
                   class="form-control" name="fin" id="fin" aria-describedby="helpId" placeholder="Fin">
                 <small id="helpId" class="form-text text-muted">* obligatoire</small>
               </div>

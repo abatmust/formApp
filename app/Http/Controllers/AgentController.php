@@ -15,7 +15,8 @@ class AgentController extends Controller
      */
     public function index()
     {
-        //
+        $agents = Agent::all();
+        return view('agents.index', ['agents' => $agents]);
     }
 
     /**
@@ -37,7 +38,7 @@ class AgentController extends Controller
     public function store(StoreAgentRequest $request)
     {
         $agent = Agent::create($request->only(['mle','nom', 'prenom', 'affectation', 'diplome', 'observation']));
-        return redirect()->back();
+        return redirect()->route('agents.index');
     }
 
     /**
