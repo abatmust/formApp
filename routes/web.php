@@ -22,3 +22,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('agents', 'AgentController');
 Route::resource('formations', 'FormationController');
+Route::resource('agent-formation', 'AgentFormationController');

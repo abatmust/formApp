@@ -18,7 +18,7 @@ class CreateFormationsTable extends Migration
             $table->string('intitule');
             $table->date('debut');
             $table->date('fin');
-            $table->text('observation');
+            $table->text('observation')->nullable();
             $table->timestamps();
         });
     }

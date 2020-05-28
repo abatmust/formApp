@@ -3,11 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Agent;
+use App\Formation;
 use App\Http\Requests\StoreAgentRequest;
+use App\Http\Requests\UpdateAgentRequest;
 use Illuminate\Http\Request;
 
 class AgentController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -49,7 +54,8 @@ class AgentController extends Controller
      */
     public function show(Agent $agent)
     {
-        //
+        $formations = Formation::select('id', 'intitule')->get();
+        return view('agents.show', ['agent' => $agent, 'formations' => $formations]);
     }
 
     /**
@@ -60,7 +66,7 @@ class AgentController extends Controller
      */
     public function edit(Agent $agent)
     {
-        //
+        return view('agents.edit', ['agent' => $agent]);
     }
 
     /**
@@ -70,9 +76,10 @@ class AgentController extends Controller
      * @param  \App\Agent  $agent
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Agent $agent)
+    public function update(UpdateAgentRequest $request, Agent $agent)
     {
-        //
+        $agent->update($request->only(['mle','nom', 'prenom', 'affectation', 'diplome', 'observation']));
+        return redirect()->route('agents.index');
     }
 
     /**

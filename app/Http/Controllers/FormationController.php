@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Agent;
 use App\Formation;
 use App\Http\Requests\StoreFormationRequest;
 use Illuminate\Http\Request;
 
 class FormationController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -49,7 +53,8 @@ class FormationController extends Controller
      */
     public function show(Formation $formation)
     {
-        //
+        $agents = Agent::select('id', 'mle')->get();
+        return view('formations.show', ['formation' => $formation, 'agents' => $agents]);
     }
 
     /**
@@ -60,7 +65,7 @@ class FormationController extends Controller
      */
     public function edit(Formation $formation)
     {
-        //
+        return view('formations.edit', ['formation' => $formation]);
     }
 
     /**
@@ -72,7 +77,8 @@ class FormationController extends Controller
      */
     public function update(Request $request, Formation $formation)
     {
-        //
+        $formation->update($request->only(['intitule','debut', 'fin', 'observation']));
+        return redirect()->route('formations.index');
     }
 
     /**

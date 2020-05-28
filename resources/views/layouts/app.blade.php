@@ -72,32 +72,34 @@
             </div>
         </nav>
         <div class="container">
-        <nav class="navbar navbar-expand-sm navbar-light bg-light">
-            <a class="navbar-brand" href="#" >Menu</a>
-            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavId">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Agents</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <a class="dropdown-item" href="{{route('agents.index')}}">liste des agents</a>
-                            <a class="dropdown-item" href="{{route('agents.create')}}">ajouter un agent</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Formation</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <a class="dropdown-item" href="{{route('formations.index')}}">liste des formations</a>
-                            <a class="dropdown-item" href="{{route('formations.create')}}">ajouter une formation</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        @auth
+            <nav class="navbar navbar-expand-sm navbar-light bg-light">
+                <a class="navbar-brand" href="#" >Menu</a>
+                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Agents</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                <a class="dropdown-item" href="{{route('agents.index')}}">liste des agents</a>
+                                <a class="dropdown-item" href="{{route('agents.create')}}">ajouter un agent</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Formation</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                <a class="dropdown-item" href="{{route('formations.index')}}">liste des formations</a>
+                                <a class="dropdown-item" href="{{route('formations.create')}}">ajouter une formation</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        @endauth
         </div>
         <main class="py-4">
             <div class="container">

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreAgentRequest extends FormRequest
+class UpdateAgentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class StoreAgentRequest extends FormRequest
     public function rules()
     {
         return [
-            'mle' => 'required|unique:agents',
+            'mle' => 'required',
             'nom' => 'required|alpha',
             'prenom' => 'required|alpha',
             'affectation' => 'required',
