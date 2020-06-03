@@ -2,6 +2,9 @@
 
 @section('content')
 
+
+<div class="btn btn-success mb-4">ajouter</div>
+
 <table class="table">
     <thead>
         <tr>
