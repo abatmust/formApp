@@ -15,7 +15,7 @@
             <div class="col-6">
                 PERIODE:
                 <b>
-                    {{$formation->debut}}  au {{$formation->fin}}
+                    {{date('d/m/Y', strtotime($formation->debut))}}  au {{date('d/m/Y', strtotime($formation->debut))}}
                 </b>
             </div>
             <div class="col-12">
@@ -55,6 +55,7 @@
                 <th>NOM ET PRENOM</th>
                 <th>AFFECTATION</th>
                 <th>DIPLOME</th>
+                <th>SPECIALITE</th>
                 <th>OBSERVATION</th>
             </tr>
         </thead>
@@ -65,6 +66,7 @@
                     <td>{{$agent->nom}} {{$agent->prenom}}</td>
                     <td>{{$agent->affectation}}</td>
                     <td>{{$agent->diplome}}</td>
+                    <td>{{$agent->specialite}}</td>
                     <td>{{$agent->observation}}</td>
                 </tr>
             @empty

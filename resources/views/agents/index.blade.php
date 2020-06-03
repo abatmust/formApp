@@ -9,6 +9,7 @@
             <th>NOM ET PRENOM</th>
             <th>AFFECTATION</th>
             <th>DIPLOME</th>
+            <th>SPECIALITE</th>
             <th>OBSERVATION</th>
             <th>EDIT</th>
             <th>DETAIL</th>
@@ -21,6 +22,7 @@
                 <td>{{$agent->nom}} {{$agent->prenom}}</td>
                 <td>{{$agent->affectation}}</td>
                 <td>{{$agent->diplome}}</td>
+                <td>{{$agent->specialite}}</td>
                 <td>{{$agent->observation}}</td>
                 <td>
                     <form action="{{route('agents.edit', ['agent' => $agent->id])}}" method="GET">

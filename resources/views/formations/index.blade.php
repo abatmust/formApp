@@ -20,8 +20,8 @@
         @foreach ($formations as $formation)
             <tr>
                 <td scope="row">{{$formation->intitule}}</td>
-                <td>{{$formation->debut}}</td>
-                <td>{{$formation->fin}}</td>
+                <td>{{date('d/m/Y', strtotime($formation->debut))}}</td>
+                <td>{{date('d/m/Y', strtotime($formation->fin))}}</td>
                 <td>{{$formation->observation}}</td>
                 <td>
                     <form action="{{route('formations.edit', ['formation' => $formation->id])}}" method="GET">

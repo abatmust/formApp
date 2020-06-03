@@ -20,6 +20,7 @@ class CreateAgentsTable extends Migration
             $table->string('prenom');
             $table->string('affectation');
             $table->string('diplome');
+            $table->string('specialite');
             $table->text('observation')->nullable();
             $table->timestamps();
         });

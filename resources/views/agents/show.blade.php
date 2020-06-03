@@ -66,6 +66,8 @@
                 <th>INTITULE</th>
                 <th>DEBUT</th>
                 <th>FIN</th>
+                <th>DIPLOME</th>
+                <th>SPECIALITE</th>
                 <th>OBSERVATION</th>
             </tr>
         </thead>
@@ -73,8 +75,10 @@
             @forelse ($agent->formations as $formation)
                 <tr>
                     <td scope="row">{{$formation->intitule}}</td>
-                    <td>{{$formation->debut}}</td>
-                    <td>{{$formation->fin}}</td>
+                    <td>{{date('d/m/Y', strtotime($formation->debut))}}</td>
+                    <td>{{date('d/m/Y', strtotime($formation->fin))}}</td>
+                    <td>{{$agent->diplome}}</td>
+                    <td>{{$agent->specialite}}</td>
                     <td>{{$formation->observation}}</td>
                 </tr>
             @empty
