@@ -86,6 +86,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Agents</a>
                             <div class="dropdown-menu" aria-labelledby="dropdownId">
                                 <a class="dropdown-item" href="{{route('agents.index')}}">liste des agents</a>
+                                <a class="dropdown-item" href="{{route('agentFormationList')}}">liste des agents avec formations</a>
                                 <a class="dropdown-item" href="{{route('agents.create')}}">ajouter un agent</a>
                             </div>
                         </li>

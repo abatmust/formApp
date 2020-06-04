@@ -25,10 +25,10 @@ class StoreAgentRequest extends FormRequest
     {
         return [
             'mle' => 'required|unique:agents',
-            'nom' => 'required|alpha',
-            'prenom' => 'required|alpha',
+            'nom' => 'required|regex:/^[\pL\s\-]+$/u',
+            'prenom' => 'required|regex:/^[\pL\s\-]+$/u',
             'affectation' => 'required',
-            'diplome' => 'required',
+            'diplome' => 'nullable',
             'observation' => 'nullable'
            
         ];

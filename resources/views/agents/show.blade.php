@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
     <div class="col-9">
-        <h3>Détail d'un agent</h3>
+        <h3>Détail de l'agent</h3>
     <div class="card p-4">
         <div class="row">
             <div class="col-4">
@@ -40,7 +40,7 @@
         </div>
     </div>
     </div>
-    <div class="col-3">
+    <div class="col-3 d-print-none">
         <h3>Basculer une formation</h3>
         <div class="card p-2">
         <form action="{{route('agent-formation.store', ['agent' => $agent->id])}}" method="POST">
@@ -60,7 +60,7 @@
 </div>
 <h3>Liste des formations</h3>
 <div class="card p-4">
-    <table class="table">
+    <table class="table table-striped table-bordered table-hover table-sm">
         <thead>
             <tr>
                 <th>INTITULE</th>

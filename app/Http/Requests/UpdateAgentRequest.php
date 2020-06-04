@@ -25,10 +25,10 @@ class UpdateAgentRequest extends FormRequest
     {
         return [
             'mle' => 'required',
-            'nom' => 'required|alpha',
-            'prenom' => 'required|alpha',
-            'affectation' => 'required',
-            'diplome' => 'required',
+            'nom' => 'required|regex:/^[\pL\s\-]+$/u',
+            'prenom' => 'required|regex:/^[\pL\s\-]+$/u',
+            'affectation' => 'nullable',
+            'diplome' => 'nullable',
             'observation' => 'nullable'
            
         ];

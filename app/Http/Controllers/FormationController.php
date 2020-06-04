@@ -53,7 +53,7 @@ class FormationController extends Controller
      */
     public function show(Formation $formation)
     {
-        $agents = Agent::select('id', 'mle')->get();
+        $agents = Agent::select('id', 'mle', "nom", "prenom")->orderBy('nom')->get();
         return view('formations.show', ['formation' => $formation, 'agents' => $agents]);
     }
 

@@ -28,7 +28,7 @@
         </div>
     </div>
     </div>
-    <div class="col-3">
+    <div class="col-3 d-print-none">
         <h3>Basculer un agent</h3>
         <div class="card p-2">
         <form action="{{route('agent-formation.store', ['formation' => $formation->id])}}" method="POST">
@@ -37,7 +37,7 @@
                   <label for="agent">Agent:</label>
                   <select class="form-control" name="agent" id="agent">
                       @foreach ($agents as $agent)
-                  <option value="{{$agent->id}}">{{$agent->mle}}</option>
+                  <option value="{{$agent->id}}">{{$agent->mle}} {{$agent->nom}} {{$agent->prenom}}</option>
                       @endforeach
                   </select>
                 </div>
@@ -48,7 +48,7 @@
 </div>
 <h3>Liste des agents</h3>
 <div class="card p-4">
-    <table class="table">
+    <table class="table table-striped table-bordered table-hover table-sm">
         <thead>
             <tr>
                 <th>Matricule</th>

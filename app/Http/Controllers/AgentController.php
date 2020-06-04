@@ -92,4 +92,8 @@ class AgentController extends Controller
     {
         //
     }
+    public function agentFormationList(){
+        $agents = Agent::with(['formations'])->get();
+        return view('agents.agentFormationList', ['agents' => $agents]);
+    }
 }
