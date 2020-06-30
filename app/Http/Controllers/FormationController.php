@@ -89,6 +89,7 @@ class FormationController extends Controller
      */
     public function destroy(Formation $formation)
     {
-        //
+        $formation->delete();
+        return redirect()->route('formations.index');
     }
 }

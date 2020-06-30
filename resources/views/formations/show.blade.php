@@ -15,7 +15,7 @@
             <div class="col-6">
                 PERIODE:
                 <b>
-                    {{date('d/m/Y', strtotime($formation->debut))}}  au {{date('d/m/Y', strtotime($formation->debut))}}
+                    {{date('d/m/Y', strtotime($formation->debut))}}  au {{date('d/m/Y', strtotime($formation->fin))}}
                 </b>
             </div>
             <div class="col-12">
@@ -46,6 +46,7 @@
         </div>
     </div>
 </div>
+
 <h3>Liste des agents</h3>
 <div class="card p-4">
     <table class="table table-striped table-bordered table-hover table-sm">
@@ -76,6 +77,14 @@
             @endforelse
         </tbody>
     </table>
+</div>
+<div class="card p-4 mt-2">
+    <form action="{{route('formations.destroy', ['formation' => $formation->id])}}" method="POST">
+            @method('DELETE')
+            @csrf
+                
+                <button class="btn btn-sm btn-danger" type="submit">Supprimer cette formation</button>
+    </form>
 </div>
     
     
